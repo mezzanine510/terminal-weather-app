@@ -1,10 +1,11 @@
 const request = require('request');
+const token = require('./config');
 
 const geocode = (address, callback) => {
     // encode to handle special characters
-    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${ encodeURIComponent(address) }.json?access_token=pk.eyJ1IjoibWV6emFuaW5lNTEwIiwiYSI6ImNqdmd2YTNndzBidnY0OHF5NHFwb24zZGkifQ.rctCTxcxdW743H-nMlH51Q`;
+    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${ encodeURIComponent(address) }.json?access_token=${ token.mapboxKey }&limit=1`;
 
-    request({ url, json: true }, (error, body) => {
+    request({ url, json: true }, (error, { body }) => {
         if (error) {
             callback('Unable to connect to location services.', undefined);
         }
