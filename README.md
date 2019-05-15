@@ -1,5 +1,5 @@
 # node-weather-app
-A weather app built with Node.js, using DarkSky and mapbox APIs.
+A command-line weather app built with Node.js, using DarkSky and mapbox APIs.
 
 ### Setup
 If you don't already have them, create Dark Sky and Mapbox accounts at:
